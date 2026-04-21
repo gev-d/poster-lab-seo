@@ -1,0 +1,127 @@
+<!-- SEO note: This page is a real HTML document with its own title, metadata, heading, and crawlable internal links. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poster Editor — Live preview for headlines &amp; colors | PosterLab</title>
+  <meta
+    name="description"
+    content="Use PosterLab’s simple editor: set a headline, pick a background, scale type, and preview instantly. Reset any time—built with vanilla JavaScript for learning."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html">PosterLab</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <button
+          class="nav__toggle"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="primary-menu"
+        >
+          Menu
+        </button>
+        <ul id="primary-menu" class="nav__list" data-nav-menu>
+          <li><a class="nav__link" href="index.html" data-nav-path="index.html">Home</a></li>
+          <li><a class="nav__link" href="youtube-thumbnail.html" data-nav-path="youtube-thumbnail.html">YouTube</a></li>
+          <li><a class="nav__link" href="instagram-story-maker.html" data-nav-path="instagram-story-maker.html">Instagram</a></li>
+          <li><a class="nav__link" href="pricing.html" data-nav-path="pricing.html">Pricing</a></li>
+          <li><a class="nav__link" href="blog-how-to-make-youtube-thumbnail.html" data-nav-path="blog-how-to-make-youtube-thumbnail.html">Blog</a></li>
+          <li class="nav__cta"><a class="btn btn--primary" href="editor.html">Open editor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <section class="hero hero--compact" aria-labelledby="editor-hero">
+        <span class="badge">Interactive</span>
+        <h1 id="editor-hero">Simple poster editor with live preview</h1>
+        <p class="lead">
+          <!-- Forms + labeled controls: good for accessibility and clear content relationships. -->
+          Adjust the fields on the left and watch the preview update. This page intentionally stays lightweight so the JavaScript stays easy to read and debug.
+        </p>
+      </section>
+
+      <section aria-labelledby="controls-heading">
+        <h2 id="controls-heading">Customize your poster</h2>
+        <p style="color: var(--color-muted); margin-top: -0.25rem">
+          Use the controls below—each field maps directly to the live preview on the right.
+        </p>
+
+        <div class="editor-layout" style="margin-top: 1.25rem">
+        <div class="panel">
+          <div class="form-group">
+            <label for="poster-title">Poster title</label>
+            <input class="input" type="text" id="poster-title" name="poster-title" value="Your headline goes here" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="bg-color">Background color</label>
+            <!-- Native <select>: accessible, no dependencies, works everywhere. -->
+            <select class="select" id="bg-color" name="bg-color">
+              <option value="#e0e7ff">Soft indigo</option>
+              <option value="#fce7f3">Rose mist</option>
+              <option value="#ecfccb">Mint</option>
+              <option value="#fef3c7">Warm sand</option>
+              <option value="#1e293b">Slate (dark)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="font-size">Font size</label>
+            <input type="range" id="font-size" name="font-size" min="18" max="72" value="36" />
+            <p class="range-value" id="font-size-value" aria-live="polite">36px</p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn--secondary" type="button" id="reset-editor">Reset to defaults</button>
+            <a class="btn btn--primary" href="pricing.html">View pricing</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="sr-only">Live preview</h3>
+          <!-- Preview is a live region visually; font size label uses aria-live for screen reader updates. -->
+          <div id="preview-box" class="preview-box">
+            <p id="preview-title" class="preview-box__title">Your headline goes here</p>
+          </div>
+          <p style="margin-top: 0.75rem; color: var(--color-muted); font-size: 0.9rem">
+            Tip: try the dark background with a large font size to test contrast quickly.
+          </p>
+        </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="next-read">
+        <h2 id="next-read">Keep learning</h2>
+        <p>
+          New to thumbnails? Read
+          <a href="blog-how-to-make-youtube-thumbnail.html">how to make a YouTube thumbnail that gets clicks</a>
+          or return to the
+          <a href="index.html">homepage</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year></span> PosterLab. Built for learning SEO fundamentals.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="pricing.html">Pricing</a>
+        <a href="blog-how-to-make-youtube-thumbnail.html">Blog</a>
+        <a href="editor.html">Editor</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/editor.js" defer></script>
+</body>
+</html>
