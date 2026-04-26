@@ -1,0 +1,6 @@
+# Update Sitemap URL to match your canonical production origin (custom domain or Vercel URL).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://poster-lab-seo.vercel.app/sitemap.xml
